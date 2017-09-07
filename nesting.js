@@ -37,7 +37,15 @@ var employees = [{
 //  3. Return the updated employee array.
 
 // Code here
-
+var employeeUpdater = () => {
+  arr = employees;
+  arr = arr.filter(obj => obj.firstName !== 'Theo');
+  arr = arr.map(obj => {
+    obj.firstName === 'Lorie' ? obj.department = 'HR' : obj = obj;
+    return obj;
+  });
+  return arr;
+ }
 
 
 
@@ -56,7 +64,13 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
 
-
+var removeDuplicates = () => {
+  let arr = [];
+  for (var i = 0; i < workplaceAccidents.length; i++) {
+    arr.includes(workplaceAccidents[i]) ? arr = arr : arr.push(workplaceAccidents[i]);
+  }
+  return arr;
+}
 
 
 
@@ -84,8 +98,8 @@ var cat = {
 
 // Code here
 
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -124,9 +138,11 @@ var myCar = {
 
 // Code here
 
+var recordCleaner = (obj) => {
+  return obj.accidents.map(obj => {obj.atFaultForAccident = false});
+}
 
-
-
+recordCleaner(myCar);
 
 
 
@@ -143,6 +159,6 @@ var myCar = {
 
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
-
+var looper = (arr) => arr.map(arr => arr.map(n => n % 2 === 0 ? n = 'even' : n = 'odd'));
 
 
